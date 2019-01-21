@@ -26,16 +26,3 @@ To make sure that we return a data frame, we set the argument `drop = FALSE`. He
 mtcars[, "mpg", drop=FALSE]
 ```
 
-## Using Custom CSS
-
-You may wish to set your own CSS -- **knitr** and **rmarkdown** make this easy for you. If you are using the **rmarkdown** package, you can include your CSS file by setting a parameter in the YAML header ([reference](http://rmarkdown.rstudio.com/html_document_format.html#custom_css)). You can also include a chunk of CSS code, as is done here.
-
-Note that for this example, only `class.source` is set.
-
-```{css echo=FALSE}
-.bad-code { background-color: salmon; }
-```
-
-```{r df-drop-2, class.source='bad-code'}
-mtcars[, "mpg"] 
-```
