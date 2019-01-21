@@ -16,7 +16,8 @@ CHANGED_FILES=`git show --stat $TRAVIS_COMMIT`
 if [[ $CHANGED_FILES =~ .*README\.Rmd.* ]]
 then
   R -e 'knitr::knit("README.Rmd")'
-  git add README.md
+  mv README.html index.html
+  git add README.md index.html
 fi
 
 git commit -m "Update by travis after $TRAVIS_COMMIT"
