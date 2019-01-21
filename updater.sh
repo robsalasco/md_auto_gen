@@ -15,7 +15,7 @@ git checkout master
 CHANGED_FILES=`git show --stat $TRAVIS_COMMIT`
 if [[ $CHANGED_FILES =~ .*README\.Rmd.* ]]
 then
-  R -e 'knitr::render_markdown("README.Rmd")'
+  R -e 'knitr::knit("README.Rmd")'
   git add README.md
 fi
 
