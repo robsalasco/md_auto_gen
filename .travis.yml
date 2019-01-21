@@ -1,0 +1,17 @@
+language: r
+env: _R_CHECK_CRAN_INCOMING_=FALSE
+sudo: required
+warnings_are_errors: false
+
+r:
+  - release
+
+repos:
+  CRAN: https://cloud.r-project.org
+
+r_packages:
+  - knitr
+  - rmarkdown
+
+after_success:
+- bash ghp-updater.sh
