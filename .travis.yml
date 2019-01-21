@@ -14,4 +14,4 @@ r_packages:
   - rmarkdown
 
 after_success:
-  - bash ghp-updater.sh
+  - bash updater.sh
