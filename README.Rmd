@@ -5,10 +5,7 @@ author: "Roberto Salas"
 
 # Testing
 
-## Using Bootstrap
-
-Using R Markdown, the default behavior is to include the Bootstrap framework. This can make things very easy for you to signify your code and your output. Bootstrap defines some [CSS classes for backgrounds](http://getbootstrap.com/css/#helper-classes-backgrounds): `"bg-primary"`, `"bg-success"`, `"bg-info"`, `"bg-warning"`, and `"bg-danger"`.
-
 ```{r df-drop, class.source='bg-warning', class.output='bg-warning'}
-mtcars[, "mpg"]
+data <- read.csv("data.csv")
+data
 ```
