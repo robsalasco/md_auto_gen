@@ -10,7 +10,6 @@ repos:
   CRAN: https://cloud.r-project.org
 
 r_packages:
-  - knitr
   - rmarkdown
 
 after_success:

@@ -1,40 +1,46 @@
----
-title: "HTML-Class"
-author: "Roberto Salas"
-output:
-  html_document:
-    keep_md: true
----
+Here are some (newer) options you can use with **knitr** (&gt;=
+v1.15.6), `class.source` and `class.output`. Both are useful only for
+rendering R Markdown files into HTML. Multiple classes can be set by
+providing a vector, or a space-delimited string,
+i.e. `class.source = c("foo", "bar")` or `class.source = "foo bar"`.
 
-Here are some (newer) options you can use with **knitr** (>= v1.15.6), `class.source` and `class.output`. Both are useful only for rendering R Markdown files into HTML. Multiple classes can be set by providing a vector, or a space-delimited string, i.e. `class.source = c("foo", "bar")` or `class.source = "foo bar"`.
+One way this can be useful is motivated by the original [Stack Overflow
+question](http://stackoverflow.com/q/41030477/559676), how can we use
+**knitr** to help us to emphasize “bad” coding practices?
 
-One way this can be useful is motivated by the original [Stack Overflow question](http://stackoverflow.com/q/41030477/559676), how can we use **knitr** to help us to emphasize "bad" coding practices?
+Using Bootstrap
+---------------
 
-## Using Bootstrap
+Using R Markdown, the default behavior is to include the Bootstrap
+framework. This can make things very easy for you to signify your code
+and your output. Bootstrap defines some [CSS classes for
+backgrounds](http://getbootstrap.com/css/#helper-classes-backgrounds):
+`"bg-primary"`, `"bg-success"`, `"bg-info"`, `"bg-warning"`, and
+`"bg-danger"`.
 
-Using R Markdown, the default behavior is to include the Bootstrap framework. This can make things very easy for you to signify your code and your output. Bootstrap defines some [CSS classes for backgrounds](http://getbootstrap.com/css/#helper-classes-backgrounds): `"bg-primary"`, `"bg-success"`, `"bg-info"`, `"bg-warning"`, and `"bg-danger"`.
+For example, we are warned that the normal subsetting of a data frame
+can be type-unstable. To show this here, the chunk options are set:
+`class.source = 'bg-warning', class.output = 'bg-warning'`.
 
-For example, we are warned that the normal subsetting of a data frame can be type-unstable. To show this here,  the chunk options are set: `class.source = 'bg-warning', class.output = 'bg-warning'`.
-
-
-```{.r .bg-warning}
+``` r
 mtcars[, "mpg"]
 ```
 
-```{.bg-warning}
+``` bg-warning
 ##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
 ## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
 ## [29] 15.8 19.7 15.0 21.4
 ```
 
-To make sure that we return a data frame, we set the argument `drop = FALSE`. Here the chunk options are set: `class.source = 'bg-success', class.output = 'bg-success'`.
+To make sure that we return a data frame, we set the argument
+`drop = FALSE`. Here the chunk options are set:
+`class.source = 'bg-success', class.output = 'bg-success'`.
 
-
-```{.r .bg-success}
+``` r
 mtcars[, "mpg", drop=FALSE]
 ```
 
-```{.bg-success}
+``` bg-success
 ##                      mpg
 ## Mazda RX4           21.0
 ## Mazda RX4 Wag       21.0
@@ -69,4 +75,3 @@ mtcars[, "mpg", drop=FALSE]
 ## Maserati Bora       15.0
 ## Volvo 142E          21.4
 ```
-

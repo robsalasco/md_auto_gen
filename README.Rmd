@@ -1,9 +1,6 @@
 ---
 title: "HTML-Class"
 author: "Roberto Salas"
-output:
-  html_document:
-    keep_md: true
 ---
 
 Here are some (newer) options you can use with **knitr** (>= v1.15.6), `class.source` and `class.output`. Both are useful only for rendering R Markdown files into HTML. Multiple classes can be set by providing a vector, or a space-delimited string, i.e. `class.source = c("foo", "bar")` or `class.source = "foo bar"`.
