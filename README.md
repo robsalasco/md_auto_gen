@@ -1,8 +1,11 @@
+Testing
+=======
+
 Here are some (newer) options you can use with **knitr** (&gt;=
 v1.15.6), `class.source` and `class.output`. Both are useful only for
 rendering R Markdown files into HTML. Multiple classes can be set by
-providing a vector, or a space-delimited string,
-i.e. `class.source = c("foo", "bar")` or `class.source = "foo bar"`.
+providing a vector, or a space-delimited string, i.e.
+`class.source = c("foo", "bar")` or `class.source = "foo bar"`.
 
 One way this can be useful is motivated by the original [Stack Overflow
 question](http://stackoverflow.com/q/41030477/559676), how can we use

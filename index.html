@@ -282,6 +282,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -372,17 +375,19 @@ $(document).ready(function () {
 </div>
 
 
-<p>Here are some (newer) options you can use with <strong>knitr</strong> (&gt;= v1.15.6), <code>class.source</code> and <code>class.output</code>. Both are useful only for rendering R Markdown files into HTML. Multiple classes can be set by providing a vector, or a space-delimited string, i.e. <code>class.source = c(&quot;foo&quot;, &quot;bar&quot;)</code> or <code>class.source = &quot;foo bar&quot;</code>.</p>
+<div id="testing" class="section level1">
+<h1>Testing</h1>
+<p>Here are some (newer) options you can use with <strong>knitr</strong> (&gt;= v1.15.6), <code>class.source</code> and <code>class.output</code>. Both are useful only for rendering R Markdown files into HTML. Multiple classes can be set by providing a vector, or a space-delimited string, i.e. <code>class.source = c(&quot;foo&quot;, &quot;bar&quot;)</code> or <code>class.source = &quot;foo bar&quot;</code>.</p>
 <p>One way this can be useful is motivated by the original <a href="http://stackoverflow.com/q/41030477/559676">Stack Overflow question</a>, how can we use <strong>knitr</strong> to help us to emphasize “bad” coding practices?</p>
 <div id="using-bootstrap" class="section level2">
 <h2>Using Bootstrap</h2>
 <p>Using R Markdown, the default behavior is to include the Bootstrap framework. This can make things very easy for you to signify your code and your output. Bootstrap defines some <a href="http://getbootstrap.com/css/#helper-classes-backgrounds">CSS classes for backgrounds</a>: <code>&quot;bg-primary&quot;</code>, <code>&quot;bg-success&quot;</code>, <code>&quot;bg-info&quot;</code>, <code>&quot;bg-warning&quot;</code>, and <code>&quot;bg-danger&quot;</code>.</p>
-<p>For example, we are warned that the normal subsetting of a data frame can be type-unstable. To show this here, the chunk options are set: <code>class.source = &#39;bg-warning&#39;, class.output = &#39;bg-warning&#39;</code>.</p>
+<p>For example, we are warned that the normal subsetting of a data frame can be type-unstable. To show this here, the chunk options are set: <code>class.source = 'bg-warning', class.output = 'bg-warning'</code>.</p>
 <pre class="r bg-warning"><code>mtcars[, &quot;mpg&quot;]</code></pre>
 <pre class="bg-warning"><code>##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
 ## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
 ## [29] 15.8 19.7 15.0 21.4</code></pre>
-<p>To make sure that we return a data frame, we set the argument <code>drop = FALSE</code>. Here the chunk options are set: <code>class.source = &#39;bg-success&#39;, class.output = &#39;bg-success&#39;</code>.</p>
+<p>To make sure that we return a data frame, we set the argument <code>drop = FALSE</code>. Here the chunk options are set: <code>class.source = 'bg-success', class.output = 'bg-success'</code>.</p>
 <pre class="r bg-success"><code>mtcars[, &quot;mpg&quot;, drop=FALSE]</code></pre>
 <pre class="bg-success"><code>##                      mpg
 ## Mazda RX4           21.0
@@ -417,6 +422,7 @@ $(document).ready(function () {
 ## Ferrari Dino        19.7
 ## Maserati Bora       15.0
 ## Volvo 142E          21.4</code></pre>
+</div>
 </div>
 
 
