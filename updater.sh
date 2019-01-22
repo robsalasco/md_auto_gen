@@ -13,7 +13,7 @@ git config user.email "travis"
 git checkout master
 
 CHANGED_FILES=`git show --stat $TRAVIS_COMMIT`
-if [[ $CHANGED_FILES =~ .*README\.Rmd.* ]]
+if [[ $CHANGED_FILES =~ .*(README\.Rmd|data\.csv).* ]]
 then
   R -e 'rmarkdown::render("README.Rmd", rmarkdown::md_document(variant = "markdown_github"))'
   R -e 'rmarkdown::render("README.Rmd", rmarkdown::html_document(), output_file="index.html")'
